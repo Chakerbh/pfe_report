@@ -211,5 +211,23 @@ Much like Web Services, a REST service is platform-independent,
 language-independent standard-based asit runs on top of HTTP, and is easily used
 in the presence of firewalls.
 
-However, there are a fe
+However, there are a few major concepts which make REST unnique from other web
+services. In fact , its main key principales are the following:
 
+Unique URL-Resource mapping: Every resouce is mapped to a unique URL. That
+refers to a some logical way  to access information. 
+
+Statelessness: All information required to precess the request by server is
+contained along with the request. This means that no informatio of the previes
+request is maintained by the server. This is inherited from the fact that REST
+is based on HTTP.
+
+Action Verbs: REST architecture use HTTP verbs to identify the apropriate
+action. The main HTTP verbs used in a REST architecture are GET, POST, PUT and
+DELETE. In fact, GET is used by the client to access the resource on the server,
+PUT to update a resource, POST to create a new one and DELETE to remove
+resource.
+
+Data Exchange formats: REST architecture does not require any particular
+encoding for the resource body. JSON and XML are the most used format, but it
+can be PROTOBUF, YAML etc. 
