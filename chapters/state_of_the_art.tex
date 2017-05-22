@@ -5,7 +5,58 @@ the literature as well as the current solutions adopted by Predictix. Next, we
 will specify the different proposed solutions and choose the one that fits most
 our needs.
 
-\section{Definitions}
+
+
+\subsection{General concepts}
+
+In this section, we will be defining the general concepts that the Technical
+Infrastructure team work around, and more specifically those that this project
+evolves around. We will also clarify the use cases for these technologies and
+concepts in Predictix.
+
+\subsubsection{Declarative programming}
+Definition:
+Declarative programming is a programming paradigm where the developer write code
+in such a way that it describes the logic of computation, without describing its
+workflow.
+
+\subsubsection{REST architecture}
+Rest stands fore REpresntational State Transfer. It is an architecture style for
+designing networked applications. It permits creating, modifying resources
+easily. Indeed REST is a lightweight alternative to complex mechanism like RPC,
+CORBA and SOAP. 
+
+Rest is not a 'standard'. In fact,  it is a guideline to build an efficient
+framework for communication between two machines using HTTP protocol. The World
+Wide Web itself, based on HTTP, can be viewed as a REST-based architecture. REST
+relies on a stateless, client-server, cacheable communication protocol. It is
+simple to implement and maintain. In addition, it allows applications to be scalable
+by supporting multiple backend services at the same time.
+
+Much like Web Services, a REST service is platform-independent,
+language-independent standard-based asit runs on top of HTTP, and is easily used
+in the presence of firewalls.
+
+However, there are a few major concepts which make REST unnique from other web
+services. In fact , its main key principales are the following:
+
+Unique URL-Resource mapping: Every resouce is mapped to a unique URL. That
+refers to a some logical way  to access information. 
+
+Statelessness: All information required to precess the request by server is
+contained along with the request. This means that no informatio of the previes
+request is maintained by the server. This is inherited from the fact that REST
+is based on HTTP.
+
+Action Verbs: REST architecture use HTTP verbs to identify the apropriate
+action. The main HTTP verbs used in a REST architecture are GET, POST, PUT and
+DELETE. In fact, GET is used by the client to access the resource on the server,
+PUT to update a resource, POST to create a new one and DELETE to remove
+resource.
+
+Data Exchange formats: REST architecture does not require any particular
+encoding for the resource body. JSON and XML are the most used format, but it
+can be PROTOBUF, YAML etc. 
 
 \subsection{Cloud}
 
@@ -21,6 +72,8 @@ far from the user–ranging in distance from across a city to across the world.
 Cloud computing relies on sharing of resources to achieve coherence and economy
 of scale, similar to a utility (like the electricity grid) over an electricity
 network.
+
+\section{Definitions}
 
 \subsubsection{AWS}
 Amazon Web Services (AWS) is a subsidiary of Amazon.com that provides on-demand
@@ -61,8 +114,13 @@ graph). This enables many powerful features.
 
 Nix was created by Eelco Dolstra as he's PHD. Eelco is, along with other main
 contributors to the Nix ecosystem, a Predictix employment.
+\subsection{Nix language}
+
 
 \subsubsection{NixOS}
+Nixos is Linux distribution built on top of the Nix package manager. It
+uses the Nix language for declarative configuration which allows realiable
+system upgrades.
 
 \subsubsection{NixOps}
 NixOps is a tool for deploying sets of NixOS Linux Machines, either to real
@@ -71,8 +129,7 @@ system configuration to networks and adds provisioning.
 
 \par
 The NixOps Dashboard is an extension to NixOps and offers the same content and
-functionality via a Web UI and a rich RESTful API. The API can be used to
-integrate the dashboard in your ecosystem. Core features are:
+functionality via a Web UI and a rich RESTful API. Core features are:
 
 \begin{itemize}
 \item User-friendly web-based interface
