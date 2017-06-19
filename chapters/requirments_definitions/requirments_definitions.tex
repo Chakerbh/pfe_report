@@ -1,6 +1,6 @@
 \chapter{Requirement definitions}
 
-Introduction
+\section*{Introduction}
 
 After imbibing the general context of the project, we are going to focus in
 the is chapter on providing a full description of out project, that we will be
@@ -21,17 +21,50 @@ the functional and non functional requirements of the project.
 
 
 \subsection{Functional requirements}
-Benchmarks Dashboard that we are expected to develop has to main
-functionalities . 
+The  purpose of this project is to automate the benchmarking process of the
+applications developed in Predictix. For that ther are two main requirements
+that need to be addressed.
 
-\subsubsection{Start new benchmark}
-BD should give the ability to start a new benchmark 
+\subsubsection{Automating "benchmark runs"}
+The application should give the ability to the clients, the developers, to run
+benchmark with the click of a button. The applicatin must run all the repeated
+process without user's interactions. For that 3 operations must be automated:
+
+$\bullet$ \textbf{Deploy the application}: The applications developed in house are SaaS
+applicatons, thus they must be deployed to the cloud. The user
+choose what the application that want to run benchmark for. Then we need to
+automaticly provison a server in the cloud, install the application on that
+server along with all dependcies that are needed to run the benchmark.
+
+$\bullet$ \textbf{Load test data}: To have a real and consice measure of the perfoarance of the
+application, a data sample should be loaded into the database. This sample should
+be the same across all benchmarks runs so it can make sense to compare them. The
+data should be loaded as soon as the application is installed.
+
+$\bullet$ \textbf{Run The benchmark}: After loading test data we will run a series of service test
+and measure the time each service took to complete the request. Each service
+test will be run 3 times to unveil any issues with database warmup.
+
+Finally after the benchmarks completed the result of the test should be stored
+for the developer to check and the instance should be unprovisioned.
 
 \subsubsection{Visualize the previous benchmarks}
-BD should give the ability to the user to view previous benchmarks result. 
+They developer should be able to see and investigate the result of the
+benchmarks. He must be also be able to:
 
+$\bullet$ \textbf{Compare benchmarks}: In this case the user can see differnece
+in the overall perfoaramance of the application, between two different dates.
+
+$\bullet$ \textbf{Test history}: The user can see the test history. Thus the
+state of the test between all benchmarks, or specifly between two bencharmks.
+
+$\bullet$ \textbf{Benchmark status}: The user can see the status of the
+benchmark. Whether they competed successfully or not or they still running. Also
+they can see who started the benchmark run, and when he started it.
 
 \section{Product Backlog}
+From the previous requirements and some other realted to user mangment we can
+extract this table below
 \begin{center}
   \begin{tabular}{ | p{1cm}  | p{9cm}  | p{2cm} | p{2cm}| }
     \hline
@@ -39,7 +72,7 @@ BD should give the ability to the user to view previous benchmarks result.
     ID & User Story                                                                                                        & Priority        & Estimation\\ \hline
 
     1 & As a user, I want to login using my username and password and start using the application right away.              & 99              & 99        \\ \hline
-    2 & As a user, I want to visualize account’s deployments  and select one to run new benchmark                          & 99              & 99        \\ \hline
+    2 & As a user, I want to visualize account’s applications and select one to run new benchmark                          & 99              & 99        \\ \hline
     1 & As a user, I want to visualize the list of accounts.                                                               & 99              & 99        \\ \hline
     1 & As a user, I want to visualize the status of account’s benchmarks.                                                 & 99              & 99        \\ \hline
     1 & As a user, I want to login using my username and password and start using the application right away.              & 99              & 99        \\ \hline
@@ -52,7 +85,3 @@ BD should give the ability to the user to view previous benchmarks result.
     \hline
   \end{tabular}
 \end{center}
-\subsubsection{Detailed use cases}
-In this section, e will detail the wtwo most important use cases:
-
-TODO

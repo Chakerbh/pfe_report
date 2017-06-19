@@ -7,20 +7,45 @@ our needs.
 
 
 
-\subsection{General concepts}
+\section{General concepts}
 
 In this section, we will be defining the general concepts that the Technical
 Infrastructure team work around, and more specifically those that this project
 evolves around. We will also clarify the use cases for these technologies and
 concepts in Predictix.
 
-\subsubsection{Declarative programming}
-Definition:
-Declarative programming is a programming paradigm where the developer write code
-in such a way that it describes the logic of computation, without describing its
-workflow.
+\section{Declarative programming}
+In computer science, declarative programming is a programming paradigm—a style
+of building the structure and elements of computer programs—that expresses the
+logic of a computation without describing its control flow.[1]
 
-\subsubsection{REST architecture}
+Many languages that apply this style attempt to minimize or eliminate side
+effects by describing what the program must accomplish in terms of the problem
+domain, rather than describe how to accomplish it as a sequence of the
+programming language primitives[2] (the how being left up to the language's
+implementation). This is in contrast with imperative programming, which
+implements algorithms in explicit steps.
+
+Declarative programming often considers programs as theories of a formal logic,
+and computations as deductions in that logic space. Declarative programming may
+greatly simplify writing parallel programs.[3]
+
+\subsection{Datalog}
+Datalog is a declarative logic programming language that syntactically is a
+subset of Prolog. It is often used as a query language for deductive databases.
+In recent years, Datalog has found new application in data integration,
+information extraction, networking, program analysis, security, and cloud
+computing.
+
+Its origins date back to the beginning of logic programming, but it became
+prominent as a separate area around 1977 when Hervé Gallaire and Jack Minker
+organized a workshop on logic and databases.[2] David Maier is credited with
+coining the term Datalog.
+
+The applications that we will measure the perforamnce of, are all written in
+commercial implementation of Datalog, LogiQL.
+
+\section{REST architecture}
 Rest stands fore REpresntational State Transfer. It is an architecture style for
 designing networked applications. It permits creating, modifying resources
 easily. Indeed REST is a lightweight alternative to complex mechanism like RPC,
@@ -40,25 +65,25 @@ in the presence of firewalls.
 However, there are a few major concepts which make REST unnique from other web
 services. In fact , its main key principales are the following:
 
-Unique URL-Resource mapping: Every resouce is mapped to a unique URL. That
+$\bullet$ \textbf{Unique URL-Resource mapping}: Every resouce is mapped to a unique URL. That
 refers to a some logical way  to access information. 
 
-Statelessness: All information required to precess the request by server is
+$\bullet$ \textbf{Statelessness}: All information required to precess the request by server is
 contained along with the request. This means that no informatio of the previes
 request is maintained by the server. This is inherited from the fact that REST
 is based on HTTP.
 
-Action Verbs: REST architecture use HTTP verbs to identify the apropriate
+$\bullet$ \textbf{Action Verbs}: REST architecture use HTTP verbs to identify the apropriate
 action. The main HTTP verbs used in a REST architecture are GET, POST, PUT and
 DELETE. In fact, GET is used by the client to access the resource on the server,
 PUT to update a resource, POST to create a new one and DELETE to remove
 resource.
 
-Data Exchange formats: REST architecture does not require any particular
+$\bullet$ \textbf{Data Exchange formats}: REST architecture does not require any particular
 encoding for the resource body. JSON and XML are the most used format, but it
 can be PROTOBUF, YAML etc. 
 
-\subsection{Cloud}
+\section{Cloud}
 
 Cloud computing is a type of Internet-based computing that provides shared
 computer processing resources and data to computers and other devices on demand.
@@ -67,76 +92,85 @@ configurable computing resources (e.g., computer networks, servers, storage,
 applications and services), which can be rapidly provisioned and released
 with minimal management effort. Cloud computing and storage solutions provide
 users and enterprises with various capabilities to store and process their data
-in either privately owned, or third-party data centers[3] that may be located
+in either privately owned, or third-party data centers that may be located
 far from the user–ranging in distance from across a city to across the world.
 Cloud computing relies on sharing of resources to achieve coherence and economy
 of scale, similar to a utility (like the electricity grid) over an electricity
 network.
 
-\section{Definitions}
-
-\subsubsection{AWS}
-Amazon Web Services (AWS) is a subsidiary of Amazon.com that provides on-demand
-cloud computing platforms. These services operate from many global geographical
-regions including 6 in North America. They include Amazon Elastic Compute
-Cloud, also known as "EC2", and Amazon Simple Storage Service, also known as
-"S3". As of 2016, AWS has more than 70 services, spanning a wide range,
-including compute, storage, networking, database, analytics, application
-services, deployment, management, mobile, developer tools and tools for the
-Internet of Things. Amazon markets AWS as a service to provide large computing
-capacity quicker and cheaper than a client company building an actual physical
-server farm.
-
-\subsection{Retail}
+\section{Retail}
 TODO
 
-\subsection{SaaS}
-The disruption to the widespread on-premise and self-hosted retail forecasting
-and TODO applications begin with the emerge of the cloud.
-TODO
+\section{SaaS}
+Software as a service (SaaS) is a software licensing and
+delivery model in which software is licensed on a subscription basis and is
+centrally hosted. It is sometimes referred to as "on-demand software",
+and was formerly referred to as "software plus services" by Microsoft. SaaS
+is typically accessed by users using a thin client via a web browser. SaaS has
+become a common delivery model for many business applications, including office
+and messaging software, payroll processing software, DBMS software, management
+software, CAD software, development software, gamification, virtualization,[4]
+accounting, collaboration, customer relationship management (CRM), Management
+Information Systems (MIS), enterprise resource planning (ERP), invoicing, human
+resource management (HRM), talent acquisition, content management (CM), and
+service desk management. SaaS has been incorporated into the strategy of
+nearly all leading enterprise software companies.
 
-\subsection{Benchmark}
-TODO
+\section{Automation}
+Automation or automatic control, is the use of various control systems for
+operating equipment such as machinery, processes in factories, boilers and heat
+treating ovens, switching on telephone networks, steering and stabilization of
+ships, aircraft and other applications and vehicles with minimal or reduced
+human intervention. Some processes have been completely automated.
 
-\subsection{Nix}
+Automation has been achieved by various means including mechanical, hydraulic,
+pneumatic, electrical, electronic devices and computers, usually in combination.
+Complicated systems, such as modern factories, airplanes and ships typically use
+all these combined techniques. The biggest benefit of automation is that it
+saves labor; however, it is also used to save energy and materials and to
+improve quality, accuracy and precision.
 
-Nix is a purely functional package manager. This means that it treats packages
-like values in purely functional programming languages such as Haskell — they
-are built by functions that don’t have side-effects, and they never change after
-they have been built. Nix stores packages in the Nix store, usually the
-directory /nix/store, where each package has its own unique subdirectory such as
+The term automation in the software industry has gain a lot of success in the
+recent years. From the automation of build to the deployment, various steps
+in the develompent pipeline can be automated. Including benchmarking the
+applications.
 
-\colorbox{Gray}{\lstinline{nix/store/b6gvzjyb2pg0kjfwrjmg1vfhh54ad73z-firefox-33.1/}}
+\section{Benchmark}
+In computing, a benchmark is the act of running a computer program, a set of
+programs, or other operations, in order to assess the relative performance of an
+object, normally by running a number of standard tests and trials against it.[1]
+The term 'benchmark' is also mostly utilized for the purposes of elaborately
+designed benchmarking programs themselves.
 
-Where \colorbox{Gray}{\lstinline{b6gvzjyb2pg0...}} is a unique identifier for the package that captures all its
-dependencies (it’s a cryptographic hash of the package’s build dependency
-graph). This enables many powerful features.
+Benchmarking is usually associated with assessing performance characteristics of
+computer hardware, for example, the floating point operation performance of a
+CPU, but there are circumstances when the technique is also applicable to
+software. Software benchmarks are, for example, run against compilers or
+database management systems.
 
-Nix was created by Eelco Dolstra as he's PHD. Eelco is, along with other main
-contributors to the Nix ecosystem, a Predictix employment.
-\subsection{Nix language}
+Benchmarks provide a method of comparing the performance of various subsystems
+across different chip/system architectures.
 
+In our case the we are going to benchmark applications along with the database
+system that powers them. Since they are strongly coupled.
 
-\subsubsection{NixOS}
-Nixos is Linux distribution built on top of the Nix package manager. It
-uses the Nix language for declarative configuration which allows realiable
-system upgrades.
+\section{NoSQL}
+A NoSQL (originally referring to "non SQL", "non relational" or "not only
+SQL") database provides a mechanism for storage and retrieval of data which
+is modeled in means other than the tabular relations used in relational
+databases. Such databases have existed since the late 1960s, but did not obtain
+the "NoSQL" moniker until a surge of popularity in the early twenty-first
+century, triggered by the needs of Web 2.0 companies such as Facebook,
+Google, and Amazon.com. NoSQL databases are increasingly used in big
+data and real-time web applications.[6] NoSQL systems are also sometimes called
+"Not only SQL" to emphasize that they may support SQL-like query
+languages.
 
-\subsubsection{NixOps}
-NixOps is a tool for deploying sets of NixOS Linux Machines, either to real
-hardware or to virtual machines. It extends NixOS's declarative approach to
-system configuration to networks and adds provisioning.
-
-\par
-The NixOps Dashboard is an extension to NixOps and offers the same content and
-functionality via a Web UI and a rich RESTful API. Core features are:
-
-\begin{itemize}
-\item User-friendly web-based interface
-\item Improved security
-\item Scheduled operations (deployments, backups, ...etc)
-\item Permanent traceability
-\item Clear audit trail
-\item Role based access
-\end{itemize}
-
+Motivations for this approach include: simplicity of design, simpler
+"horizontal" scaling to clusters of machines (which is a problem for relational
+databases), and finer control over availability. The data structures used by
+NoSQL databases (e.g. key-value, wide column, graph, or document) are different
+from those used by default in relational databases, making some operations
+faster in NoSQL. The particular suitability of a given NoSQL database depends on
+the problem it must solve. Sometimes the data structures used by NoSQL databases
+are also viewed as "more flexible" than relational database tables

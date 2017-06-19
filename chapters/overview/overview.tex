@@ -1,6 +1,6 @@
 \chapter{Overview}
 
-\section{Introduction}
+\section*{Introduction}
 This introductory chapter presents the general context of the project and gives
 an overview of its scope. In the first section, we will specify pedagogical and
 professional frame of the project, where we will introduce the host company, its
@@ -9,22 +9,24 @@ section, we will present some general concepts of the project. Finally, we will
 define the project problematic and present the project goals.
 
 
-\subsection{General context}
+\section{General context}
 In the part we will put the project in its frames, both scholar and
 professional. First we will set the pedagogical. Then we will define the
 professional frame, i.e Predictix and more specifically the Technical
 Infrastructure team.
 
-\subsubsection{Pedagogical Frame}
+\subsection{Pedagogical Frame}
 This project was elaborated in the context of a graduation internship, a final
 step of obtaining the National Diploma of computer engineering from the Faculty
 of Science of Tunis
 The internship was undertook on period of four months, from February 1st to
 May 31th, 2017, during which, we integrated the Technical Infrastructure team at
 Predictix Tunisia.
-\subsubsection{Professional frame}
+\subsection{Professional frame}
+
 Predictix is an American company headquartered in Atlanta, GA, USA, with a
 center of operations in Tunisia.
+\subsubsection{Predictix: Foundation and activity domain}
 
 Predictix is a fast growing consulting and software company founded in 2005,
 headquartered in Atlanta, Georgia USA with affiliations in Tunis, Tunisia,
@@ -95,17 +97,17 @@ for higher profit bottom lines,by offering a very high flexible and
 configurable solution that facilitates the user interaction with the results he
 gets.
 
-Forecasting  and Replenishment: The firm provides forecasts and replenishment
+$\bullet$ \textbf{Forecasting  and Replenishment}: The firm provides forecasts and replenishment
 strategies that enable a retailer to implement the promotional, pricing and
 assortment strategies established. Additional profit can be gained by minimizing
 inventory levels and reducing lost sales.
 
-Assortment and Space Optimization: Predictix helps retailers to define the
+$\bullet$ \textbf{Assortment and Space Optimization}: Predictix helps retailers to define the
 optimal localized assortment for every store and every space. Retailers can
 expect category margins to improve 100 basis points or more, and to drive higher
 sales, from optimizing their assortment with Predictix ASO.
 
-Planning and  Allocation: Business Consulting at Predictix helps retailers
+$\bullet$ \textbf{Planning and  Allocation}: Business Consulting at Predictix helps retailers
 review their current planning and allocation process and design  new ones for
 the future.
 
@@ -113,19 +115,15 @@ In order to provide these solutions , Predictix has forged a number of
 strategic partnerships with other companies. Some of which are the following
 companies:
 
-LogicBlox: The platform provider for Predictix' solutions. Predictix used
+$\bullet$ \textbf{LogicBlox}: The platform provider for Predictix' solutions. Predictix used
 LogicBlox' scalable and declarative database system, programming language and
 different environment tools to design and build  its systems. After a
 partnership lasting for years, the two companies have merged together.
 
-Amazon Web Services: AWS is a world leader in cloud computing solutions.
-Predictix is using AWS' IaaS and PaaS solutions to host its different systems.
-The need for cloud
-
 During its life cycle, every client's product goes through a number of steps,
 from development to testing to deployment. 
 
-Technical Infrastructure team:
+\subsubsection{Technical Infrastructure team}
 
 The technical infrastructure team is needed in every step of the client's
 product life cycle. Inf  fact, they gather and collect the data, store it, do
@@ -182,3 +180,32 @@ now able to deploy complex infrastructures with a click of button.
 
 lamias-servicetester: A DSL for testing web services. It can be used for unit
 tests and for regression tests.
+
+\section{Project presentation}
+
+Since Predictix works with 1 tier retailers in the US, application data tend to
+be large enough to face issue in performance. In fact some of Predictix client
+deliver weekly data of the size of 2 TB of sales records. 
+Developer need to monitor the performance of the application during development
+phase.
+
+\subsection{Problematic}
+Measuring the performance of an application is an operation that has to be done on
+daily basis or every time changes are introduced in the application codebase or
+one its dependencies.
+To automate the benchmarking process, we need first to understand how developer
+are doing benchmarks currently.
+
+\subsubsection{Timing services}
+Compare to traditional 3-tired development stack, Business logic is installed in
+the LB database itself, Thus simplifying  application development by alleviating
+the need for:
+\begin{itemize}
+\item{fetching data to and from DB }
+\item{integration between OLAP and OLTP}
+\item{simpler language for business logic}
+\end{itemize}
+So all LB applications expose a set of sevices to the client (mostly the UI).
+
+
+
