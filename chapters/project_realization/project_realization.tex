@@ -59,8 +59,9 @@ cutting down on time wasted on tracking issues and coordination. In fact, it
 keeps the team on track and allows the project manager to monitor the progress
 on projects. Besides, it improves quality be ensuring that all tasks are
 recorded down with all details and followed up until accomplishment. Moreover,
-Jira is an extensible platform which means that it offers workflow
-customization to match more the business process. TODO(Add link Atlassian, jira software provider, www.atlassian.com.)
+Jira is an extensible platform which means that it offers workflow customization
+to match more the business process. TODO(Add link Atlassian, jira software
+provider, www.atlassian.com.)
 
 
 \section{Implementation}
@@ -69,9 +70,9 @@ This section descirbes the whole implementation process step by step TODO
 
 \section{Deployment}
 Hydra is a Nix-based continuous build system that constantly checks out code
-sources of software projects from version management systems such as
-Mercurial, to build, test and release them. The build tasks are described using
-Nix expressions. This allows a Hydra build task to specify all the dependencies
+sources of software projects from version management systems such as Mercurial,
+to build, test and release them. The build tasks are described using Nix
+expressions. This allows a Hydra build task to specify all the dependencies
 needed to build or test a project.
 
 In fact, the code of our application is, currently and constantly pushed in a
@@ -79,7 +80,44 @@ repository in BitBucket, which is a web-based hosting service for projects that
 use either the Mercurial or Git revision control systems, such as GitHub. In
 order to have our application ready to be deployed, we added a file called
 default.nix to our project, that actually defines our project’s nix-expressions.
-Afterwards, we created a project under Hydra, that we called \emph{Benchmarks Dashbooard}. Thus,
-the \emph{Benchmarks Dashbooard} project on Hydra, will be pulling our code from our BitBucket
-repository along with the default.nix file in order to perform the automated
-build and unit-tests.
+Afterwards, we created a project under Hydra, that we called \emph{Benchmarks
+  Dashboard}. Thus, the \emph{Benchmarks Dashboard} project on Hydra, will be
+pulling our code from our BitBucket repository along with the default.nix file
+in order to perform the automated build and unit-tests.
+
+The following are some screen shots about our Hydra project build. The figure
+\hyperref[fig:hydra_configuration]{\ref{fig:hydra_configuration}}
+represents the configuraton for our project. We can notice that the links to the
+different project's dependecies are defined, such as our source code and the
+nixpkgs repo which contains the definitions for all packages available through
+the nix package manager.
+
+\begin{figure}[h]
+\includegraphics[width=17cm]{hydra_configuration}
+\caption{Benchmarks Dashboard Hydra configuration screen}
+\label{fig:hydra_configuration}
+\end{figure}
+
+The figure \hyperref[fig:hydra_eval]{\ref{fig:hydra_eval}} represents the Hydra
+evaulation screen, where we can see the history if the build and whether there
+are erros in the build or not.
+
+\begin{figure}[h]
+\includegraphics[width=17cm]{hydra_eval}
+\caption{Benchmarks Dashboard Hydra configuration screen}
+\label{fig:hydra_eval}
+\end{figure}
+
+In Hydra we can also run unit test and report various indicator about the
+quality of the application. The figure
+\hyperref[fig:coverage]{\ref{fig:coverage}} shows the covarge report of the test
+of our application.
+
+\begin{figure}[h]
+\includegraphics[width=17cm]{coverage}
+\caption{Coverage report}
+\label{fig:coverage}
+\end{figure}
+
+\section*{Conclusion}
+TODO
