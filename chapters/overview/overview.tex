@@ -111,7 +111,7 @@ $\bullet$ \textbf{Planning and  Allocation}: Business Consulting at Predictix he
 review their current planning and allocation process and design  new ones for
 the future.
 
-In order to provide these solutions , Predictix has forged a number of
+\noindent In order to provide these solutions , Predictix has forged a number of
 strategic partnerships with other companies. Some of which are the following
 companies:
 
@@ -120,8 +120,14 @@ LogicBlox' scalable and declarative database system, programming language and
 different environment tools to design and build  its systems. After a
 partnership lasting for years, the two companies have merged together.
 
+$\bullet$ \textbf{Amazon Web Services}: AWS is a world leader in cloud computing
+solutions. Predictix is using AWS' IaaS and PaaS solutions to host its different
+systems. The need for cloud services will be detailed later in the next chapter
+
 During its life cycle, every client's product goes through a number of steps,
-from development to testing to deployment. 
+from development to testing to deployment. Most of tools and steps of the
+development pipeline are the responsibility of the Technical Infrastructure team
+within which we undertook this internship.
 
 \subsubsection{Technical Infrastructure team}
 
@@ -138,47 +144,46 @@ pipeline.
 The main activities of Predictix' architecture and integration team can be
 summarized to:
 
-They intervene, in the beginning of the project when the requirements are
+$\bullet$ They intervene, in the beginning of the project when the requirements are
 defined. They play the role of consultant as they are consulted to discuss the
 data specification, in collaboration with the data science team, with the
 client. In fact, their role, at this step is to take all necessary measures in
 order to make sure that the data is normalized and consistent.
 
-They intervene, also, in the development of the applications, as they are in
+$\bullet$ They intervene, also, in the development of the applications, as they are in
 charge of the applications architecture design. In fact, they translate complex
 functional and technical requirements into detailed architecture, design and
 high performing software with the ability to architect highly scalable
 distributed systems.
 
-They are, also, in charge of batch implementation thorough data modelling, rules
+$\bullet$ They are, also, in charge of batch implementation thorough data modelling, rules
 definitions, protocol buffers services, etc.
 
-Finally they are responsible of the application being automatically build and
+$\bullet$ Finally they are responsible of the application being automatically build and
 deployed on the cloud, with extremely high attention to the application
 performance, as it world affect the application cost.
 
-Tooling:
-One of the main duties of the Technical Infrastructure team. Is to create
+$\bullet$ One of the main duties of the Technical Infrastructure team. Is to create
 internal tools that facilitate the development of project, deploying and
 monitoring performance and cost.
 
-lb-job-cost: It's a tool for monitoring lb jobs cost of each client's account.
+\textbf{lb-job-cost}: It's a tool for monitoring lb jobs cost of each client's account.
 It will give the current actual cost for the month along with the projected cost
 for the whole month.
 
-Ops-console: It's a web application that helps engineers at Predictix to monitor
+\textbf{Ops-console}: It's a web application that helps engineers at Predictix to monitor
 the batch process in real-time.
 
-Command-history: A web applications that monitor the commands used in all
+\textbf{Command-history}: A web applications that monitor the commands used in all
 Predictix EC2 machines. It give the user the ability to search for command
 usage, for certain user.
 
-Nixops-dashboard:
+\textbf{Nixops-dashboard}:
 SaaS solution that allows users with no technical knowledge, to easily provision
 Predictix applications on the cloud.  Business consultants, testers, and others are
 now able to deploy complex infrastructures with a click of button.
 
-lamias-servicetester: A DSL for testing web services. It can be used for unit
+\textbf{lamias-servicetester}: A DSL for testing web services. It can be used for unit
 tests and for regression tests.
 
 \section{Project presentation}

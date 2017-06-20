@@ -1,11 +1,13 @@
 \chapter{Project Design}
 
-\section{Introduction}
+\section*{Introduction}
 After having specified the project requirements in the  previous chapter, we are
 going to present in the one,  the design of the Benchmarks Dashboard. To do so,
 we will present the project global architecture. Finally, we will zoom into the
 main layers of the project architecture and explain by providing the accurate
 diagrams that describe it best.
+
+\section{UML}
 
 \section{Mockups}
 In this part we are going to describe and validate the project business
@@ -28,7 +30,7 @@ choice, Account's info, Tests choice, Test, New Benchmarks. In the following,
 we are going to proceed by describing the mockups and the need required in every
 view.
 
-Account choice
+$\bullet$ \textbf{Account choice}:
 The figure
 \hyperref[fig:benchmarks_dashboard_home]{\ref{fig:benchmarks_dashboard_home}}
 represents the landing page of our application, for a administrator user,
@@ -43,13 +45,14 @@ view the all benchmarks run and the list of tests of that project.
 \label{fig:benchmarks_dashboard_home}
 \end{figure}
 
-Account overview:
+$\bullet$ \textbf{Account overview}:
 \hyperref[fig:benchmarks_dashboard_overview]{\ref{fig:benchmarks_dashboard_overview}}
 represents the Account overview screen mockup. This page is generated after a
 user selected an account. This page will contain a chart that represent the
 overall performance of the account's tests. The chart will contain the total
-duration of it took every benchmark run to finish 
-performance of the account. TODO
+duration it took every benchmark run to finish. It will give a general overview
+on the state of the account's applications, the general trend for its tests and
+also any alerts about the the current benchmarks status.
 
 \begin{figure}[h]
 \includegraphics[width=15cm]{overview}
@@ -57,8 +60,22 @@ performance of the account. TODO
 \label{fig:benchmarks_dashboard_overview}
 \end{figure}
 
+$\bullet$ \textbf{New deployment}:
+The figure
+\hyperref[fig:benchmarks_dashboard_home]{\ref{fig:benchmarks_dashboard_home}}
+represents the landing page of our application, for a administrator user,
+after the authentication screen which the account's choice. The page should
+contain a list of the different accounts that the user have access to. In fact,
+the user should have the possibility to select a certain account, in order to
+view the all benchmarks run and the list of tests of that project.
 
-Account' tests:
+\begin{figure}[h]
+  \includegraphics[width=15cm]{deployments}
+  \caption{New benchmark screen}
+\label{fig:benchmarks_dashboard_home}
+\end{figure}
+
+$\bullet$ \textbf{Account' tests}:
 \hyperref[fig:benchmarks_dashboard_tests]{\ref{fig:benchmarks_dashboard_tests}}
 represents the account's tests mockup. This screen will present the list of all
 account's tests. This list will show the test name, the percentage of time

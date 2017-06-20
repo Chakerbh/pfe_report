@@ -6,11 +6,18 @@
 \usepackage{hyperref}
 \usepackage{multirow}
 \usepackage{setspace}
-\usepackage[top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\rightmark}
+\lhead{\leftmark}
+\rfoot{\thepage}
+ 
+\usepackage[top=20mm, bottom=40mm]{geometry}
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0.5em}
-\graphicspath{ {chapters/project_design/images/} }
-\graphicspath{ {chapters/project_realization/images/} }
+\setlength{\headsep}{15mm}
+\graphicspath{ {chapters/project_design/images/} {chapters/project_realization/images/} }
 \renewcommand{\baselinestretch}{1.3}
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
