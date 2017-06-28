@@ -4,28 +4,18 @@ This chapter covers the implementation, testing and the deployment processes of
 the Benchmarks dashboard project. To deal wit each of these processes, we will
 introduce the technologies used and describe the way we used them. In
 addition, we will presente the project planning.
+\pagebreak
+
 \section{Developmnet environment}
 \subsection{Devlopment machine characteristics}
-The table  TODO presents the characteristics of the developmnet machine we used
-during the project implementation.
+Below are the characteristics of the developmnet machine we used during the
+project implementation.
 
-\begin{center}
-  \begin{tabular}{ | p{5cm}  | p{4cm}  | p{2cm} | }
-    \hline
-
-    \multicolumn{2}{|c|r|}{Characteristics } & Decription\\
-    \hline
-
-\multirow{3}{4em}{Processor} & Type & Intel® Core™ i7-3540M CPU \\ 
-\multirow{3}{4em}{Processor} & Type & Intel® Core™ i7-3540M CPU \\ 
-\multirow{3}{4em}{Processor} & Type & Intel® Core™ i7-3540M CPU \\ 
-
-     99              & 99        \\ \hline
-     99              & 99        \\ \hline
-
-    \hline
-  \end{tabular}
-\end{center}
+\begin{itemize}
+  \item{\textbf{Processor}: Intel® Core™ i7-3540M CP}
+  \item{\textbf{RAM}: 16 GO DDR3 }
+  \item{\textbf{System}: Ubuntu Linux 14.04 LTS}
+\end{itemize}
 
 
 \section{Project management}
@@ -50,7 +40,7 @@ The table TODO introduces the project team members and their roles.
   \end{tabular}
 \end{center}
 
-\subsection{Jira tool}
+\subsection{Jira}
 Predictix development teams use Jira for managing the projects. Jira is a
 commercial software product developed by Atlassian. It is used for bug tracking,
 issue tracking and project management. Jira allow prioritizing, assigning,
@@ -119,25 +109,31 @@ the log of systemd service and how the service is invoked automatically.
 \end{figure}
 
 \begin{figure}[h]
-  \centerline{\includegraphics[width=14cm]{load-perf-data-running}}
+  \centerline{\includegraphics[width=14cm]{load-perf-data-log}}
 \caption{load-perf-data log}
-\label{fig:load-perf-data-running}
+\label{fig:load-perf-data-log}
 \end{figure}
 
 \subsubsection{Running tests}
 For running tests we use a generic script called \emph{run-perf}. This script will
 define the instructions for running the tests, collect the logs, generate the
 report and upload it to S3. The figure
-\hyperref[fig:perf-runner]{\ref{fig:perf-runner}} shows the definition of
+\hyperref[fig:perf-runner-nix]{\ref{fig:perf-runner-nix}} shows the definition of
 the systemd service \emph{perf-runner} responsible for running the script, it
 will be launched as soon as the data is loaded with the \emph{load-perf-data}
 service.
 \begin{figure}[h]
-  \includegraphics[width=14cm]{perf-runner}
-\caption{Load perf data nix expression}
-\label{fig:perf-runner}
+  \includegraphics[width=14cm]{perf-runner-nix}
+  \caption{perf-runner nix expression}
+\label{fig:perf-runner-nix}
 \end{figure}
 
+\begin{figure}[h]
+  \includegraphics[width=14cm]{perf-runner-log}
+  \caption{perf-runner log}
+\label{fig:perf-runner-log}
+\end{figure}
+The figure \hyperref[fig:perf-runner-nix]{\ref{fig:perf-runner-nix}}
 
 \section{Deployment}
 Hydra is a Nix-based continuous build system that constantly checks out code
@@ -190,5 +186,6 @@ of our application.
 \label{fig:coverage}
 \end{figure}
 
+\clearpage
 \section*{Conclusion}
 TODO

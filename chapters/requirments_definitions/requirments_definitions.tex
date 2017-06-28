@@ -9,6 +9,8 @@ requirements and extracting the  functional and non-functional specifications.
 Then we will define the Product backlog of the project to achieve. Finally we
 will present the general use cases of the project.
 
+\pagebreak
+
 \section{Requirements analysis}
 
 \subsection{Design session}
@@ -30,20 +32,22 @@ The application should give the ability to the clients, the developers, to run
 benchmark with the click of a button. The applicatin must run all the repeated
 process without user's interactions. For that 3 operations must be automated:
 
-$\bullet$ \textbf{Deploy the application}: The applications developed in house are SaaS
-applicatons, thus they must be deployed to the cloud. The user
-choose what the application that want to run benchmark for. Then we need to
-automaticly provison a server in the cloud, install the application on that
-server along with all dependcies that are needed to run the benchmark.
+$\bullet$ \textbf{Deploy the application}: The applications developed in house
+are SaaS applicatons, thus they must be deployed to the cloud. The user choose
+what the application that want to run benchmark for. Then we need to automaticly
+provison a server in the cloud, install the application on that server along
+with all dependcies that are needed to run the benchmark.
 
-$\bullet$ \textbf{Load test data}: To have a real and consice measure of the perfoarance of the
-application, a data sample should be loaded into the database. This sample should
-be the same across all benchmarks runs so it can make sense to compare them. The
-data should be loaded as soon as the application is installed.
+$\bullet$ \textbf{Load test data}: To have a real and consice measure of the
+perfoarance of the application, a data sample should be loaded into the
+database. This sample should be the same across all benchmarks runs so it can
+make sense to compare them. The data should be loaded as soon as the application
+is installed.
 
-$\bullet$ \textbf{Run The benchmark}: After loading test data we will run a series of service test
-and measure the time each service took to complete the request. Each service
-test will be run 3 times to unveil any issues with database warmup.
+$\bullet$ \textbf{Run The benchmark}: After loading test data we will run a
+series of service test and measure the time each service took to complete the
+request. Each service test will be run 3 times to unveil any issues with
+database warmup.
 
 Finally after the benchmarks completed the result of the test should be stored
 for the developer to check and the instance should be unprovisioned.
@@ -64,9 +68,13 @@ they can see who started the benchmark run, and when he started it.
 
 \section{Product Backlog}
 From the previous requirements and some other realted to user mangment we can
-extract this table below
-\begin{center}
-  \begin{tabular}{ | p{1cm}  | p{9cm}  | p{2cm} | p{2cm}| }
+extract the product backlog described in table \hyperref[product-backlog]{\ref{product-backlog}}
+
+\begin{table}[!hp]
+\caption{Product Backlog}
+\label{product-backlog}
+\centering
+  \begin{tabular}{ | p{2cm}  | p{7cm}  | p{2cm} | p{2cm}| }
     \hline
 
     ID & User Story                                                                                                        & Priority        & Estimation\\ \hline
@@ -83,4 +91,52 @@ extract this table below
 
     \hline
   \end{tabular}
-\end{center}
+\end{table}
+
+Once the Product backlog was established and validated by the Product Owner, the
+scrum team has broken down the Product Backlog into four sprints of a duration
+of 20 days each. The sprint duration was suggested by the Scrum Master as sprint
+ceremonies were planned every 20 days at the end of each sprint.
+
+The table \hyperref[sprints]{\ref{sprints}} defines the user stories that will
+be achieved throught each sprint.
+
+\begin{table}[]
+\centering
+\caption{User Stories through each sprint}
+\label{sprints}
+\begin{tabular}{|p{2cm}|p{7cm}|p{2cm}|}
+\cline{2-3}
+                          &  User stories & Estimation \\ \hline
+Sprint 1                 &  As a user, I want to visualize account’s applications and select one to run new benchmark &  20\\ \hline
+{\multirow{3}{*}{}} Sprint 2 &  As a user, I want to be able to choose a test in an account and visualize the history over all benchmarks.&  \\ \cline{2-3} 
+{}                  &  As a user, I want to visualize the status of account’s benchmarks. &  \\ \cline{2-3} 
+{}                  & As a user, I want to visualize the list of accounts. &  \\ \hline
+{\multirow{2}{*}{}} Sprint 3&  &  \\ \cline{2-3} 
+{}                  &  &  \\ \hline
+{\multirow{3}{*}{}} Sprint 4 &  As an administrator, I want to be able to manage all accounts. &  \\ \cline{2-3} 
+{}                  &  As an administrator, I want to be able to manage all accounts. &  \\ \cline{2-3} 
+{}                  & As a user, I want to login using my username and password and start using the application right away. & 4  \\ \hline
+\end{tabular}
+\end{table}
+\section{Requirement specifcations}
+\subsection{Actors identification}
+The inteded users of the Benchmarks Dashboard are Predictix employees, The
+AppDev team (Application development team). They must be able to, easily
+intereact with the system, run new benchmarks and check the status and result as
+soon as possible.
+
+\begin{itemize}
+  \item{\textbf{AppDev team}}: The AppDev members are the developer that implement new
+    feature in the application, write the necassry steps to build the
+    application and monitor the performance of the application after every new
+    feature.
+  \item{\textbf{Account admin}}: The account admin will be responsible for manging
+    account users. Grant run benchmark rights and revoke them.
+  \item{\textbf{Adminstrator}}: the administrator is a person who should be chosen,
+    carefully. in fact, s/he willbe creating, editing and deleting users,
+    accounts. this person should also be able to assing accounts to users.
+\end{itemize}
+
+
+\section*{Conclusion}
