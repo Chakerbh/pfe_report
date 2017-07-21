@@ -50,10 +50,18 @@ request. Each service test will be run 3 times to unveil any issues with
 database warmup.
 
 Finally after the benchmarks completed the result of the test should be stored
-for the developer to check and the instance should be unprovisioned.
+for the developer to check and the instance should be unprovisioned. The figure
+\hyperref[fig:bpmn-new-benchmark]{\ref{fig:bpmn-new-benchmark}} shows the BPMN diagram
+of "New Benchmark" process.
+
+\begin{figure}[h]
+  \includegraphics[width=14cm]{bpmn-new-benchmark}
+\caption{BPMN diagram: New benchmark}
+\label{fig:bpmn-new-benchmark}
+\end{figure}
 
 \subsubsection{Visualize the previous benchmarks}
-They developer should be able to see and investigate the result of the
+The developer should be able to see and investigate the result of the
 benchmarks. He must be also be able to:
 
 $\bullet$ \textbf{Compare benchmarks}: In this case the user can see differnece
@@ -103,21 +111,20 @@ be achieved throught each sprint.
 
 \begin{table}[]
 \centering
-\caption{User Stories through each sprint}
 \label{sprints}
 \begin{tabular}{|p{2cm}|p{7cm}|p{2cm}|}
-\cline{2-3}
                           &  User stories & Estimation \\ \hline
 Sprint 1                 &  As a user, I want to visualize account’s applications and select one to run new benchmark &  20\\ \hline
 {\multirow{3}{*}{}} Sprint 2 &  As a user, I want to be able to choose a test in an account and visualize the history over all benchmarks.&  \\ \cline{2-3} 
 {}                  &  As a user, I want to visualize the status of account’s benchmarks. &  \\ \cline{2-3} 
 {}                  & As a user, I want to visualize the list of accounts. &  \\ \hline
-{\multirow{2}{*}{}} Sprint 3&  &  \\ \cline{2-3} 
-{}                  &  &  \\ \hline
+{\multirow{2}{*}{}} Sprint 3 & As a user, I want to visualize the status of account’s benchmarks. &  \\ \cline{2-3} 
+{}                  &  As an account administrator, I want to be able to grant ‘Run benchmark’  right to users also be able to revoke it.&  \\ \hline
 {\multirow{3}{*}{}} Sprint 4 &  As an administrator, I want to be able to manage all accounts. &  \\ \cline{2-3} 
-{}                  &  As an administrator, I want to be able to manage all accounts. &  \\ \cline{2-3} 
+{}                  &  As an account administrator, I want to be able to grant ‘Run benchmark’  right to users also be able to revoke it&  \\ \cline{2-3} 
 {}                  & As a user, I want to login using my username and password and start using the application right away. & 4  \\ \hline
 \end{tabular}
+\caption{User Stories through each sprint}
 \end{table}
 \section{Requirement specifcations}
 \subsection{Actors identification}
@@ -137,6 +144,18 @@ soon as possible.
     carefully. in fact, s/he willbe creating, editing and deleting users,
     accounts. this person should also be able to assing accounts to users.
 \end{itemize}
+
+\subsection{General use cases}
+\subsubsection{Use case diagram}
+The figure \hyperref[fig:use-case]{\ref{fig:use-case}} introduces the general use cases which presnets the general
+functionalitites of the application.
+
+\begin{figure}[h]
+  \center
+  \includegraphics[width=14cm]{use-case}
+  \caption{General use case diagram}
+\label{fig:use-case}
+\end{figure}
 
 
 \section*{Conclusion}

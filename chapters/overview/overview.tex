@@ -90,7 +90,12 @@ are
 Predictix offers its clients a variety of solutions. The figure gives an
 overview of Predictix business units:
 
-TODO
+\begin{figure}[h]
+  \center
+  \includegraphics[width=6cm]{planning-supply}
+\caption{Merchandising Predictix Suite}
+\label{fig:planning-supply}
+\end{figure}
 
 Pricing and Promotions: Retailers, wholesalers and some manufacturers use
 Predictix services to help them manage their promotions, pricing and markdowns
@@ -212,11 +217,20 @@ Compare to traditional 3-tired development stack, Business logic is installed in
 the LB database itself, Thus simplifying  application development by alleviating
 the need for:
 \begin{itemize}
-\item{fetching data to and from DB }
-\item{integration between OLAP and OLTP}
-\item{simpler language for business logic}
+\item{Fetching data to and from DB }
+\item{Integration between OLAP and OLTP}
+\item{Simpler language for business logic}
 \end{itemize}
+
 So all LB applications expose a set of sevices to the client (mostly the UI).
+Each service is a feature in the application or a part of a feature. To test the
+performance we measure the time it took for a request to one of the services to
+complete, Thus measuring both the performance of the  application and the
+LogicBlox database.
+
+TODO
 
 \section*{Conclusion}
-TODO
+The first chapter provided an overview of the general context of the project and
+its scope. We introduced the host company and the technical infrastucture team
+along with project problematic.
