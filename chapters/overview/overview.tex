@@ -4,25 +4,23 @@
 This introductory chapter presents the general context of the project and gives
 an overview of its scope. In the first section, we will specify pedagogical and
 professional frame of the project, where we will introduce the host company, its
-business field  and the Technical Infrastructure team. Then, in the second
-section, we will present some general concepts of the project. Finally, we will
-define the project problematic and present the project goals.
+business field  and the DevOps team. Then, in the second section, we will
+present some general concepts of the project. Finally, we will define the
+project problematic and present the project goals.
 
 \pagebreak
 
 \section{General context}
 In the part we will put the project in its frames, both scholar and
 professional. First we will set the pedagogical. Then we will define the
-professional frame, i.e Predictix and more specifically the Technical
-Infrastructure team.
+professional frame, i.e Predictix and more specifically the DevOps team.
 
 \subsection{Pedagogical Frame}
 This project was elaborated in the context of a graduation internship, a final
 step of obtaining the National Diploma of computer engineering from the Faculty
-of Science of Tunis
-The internship was undertook on period of four months, from February 1st to
-May 31th, 2017, during which, we integrated the Technical Infrastructure team at
-Predictix Tunisia.
+of Science of Tunis.
+The internship was undertook on period of four months, from February 1st to May
+31th, 2017, during which, we integrated the DevOps team at Predictix Tunisia.
 \subsection{Professional frame}
 
 Predictix is an American company headquartered in Atlanta, GA, USA, with a
@@ -137,19 +135,19 @@ systems. The need for cloud services will be detailed later in the next chapter.
 
 During its life cycle, every client's product goes through a number of steps,
 from development to testing to deployment. Most of tools and steps of the
-development pipeline are the responsibility of the Technical Infrastructure team
-within which we undertook this internship.
+development pipeline are the responsibility of the DevOps team within which we
+undertook this internship.
 
-\subsubsection{Technical Infrastructure team}
+\subsubsection{DevOps team}
 
-The technical infrastructure team is needed in every step of the client's
-product life cycle. Inf  fact, they gather and collect the data, store it, do
-batch processing or real-time processing on it, and serve it via an API to a data
-scientist who can easily query it. They have extensive knowledge on databases
-and best engineering practices. These include handling and logging errors,
-monitoring the system, building human-fault-tolerant pipelines, understanding
-what is necessary to scale up, addressing continuous integration, knowledge of
-database administration, maintaining data cleaning and ensuring a deterministic
+The DevOps team is needed in every step of the client's product life cycle. Inf
+fact, they gather and collect the data, store it, do batch processing or
+real-time processing on it, and serve it via an API to a data scientist who can
+easily query it. They have extensive knowledge on databases and best
+engineering practices. These include handling and logging errors, monitoring
+the system, building human-fault-tolerant pipelines, understanding what is
+necessary to scale up, addressing continuous integration, knowledge of database
+administration, maintaining data cleaning and ensuring a deterministic
 pipeline.
 
 The main activities of Predictix' architecture and integration team can be
@@ -174,20 +172,20 @@ $\bullet$ Finally they are responsible of the application being automatically bu
 deployed on the cloud, with extremely high attention to the application
 performance, as it world affect the application cost.
 
-$\bullet$ One of the main duties of the Technical Infrastructure team. Is to create
-internal tools that facilitate the development of project, deploying and
-monitoring performance and cost.
+$\bullet$ One of the main duties of the DevOps team. Is to create internal
+tools that facilitate the development of project, deploying and monitoring
+performance and cost.
 
 \textbf{lb-job-cost}: It's a tool for monitoring lb jobs cost of each client's account.
 It will give the current actual cost for the month along with the projected cost
 for the whole month.
 
-\textbf{Ops-console}: It's a web application that helps engineers at Predictix to monitor
+\textbf{lb-workflow-console}: It's a web application that helps engineers at Predictix to monitor
 the batch process in real-time.
 
 \textbf{Command-history}: A web applications that monitor the commands used in all
-Predictix EC2 machines. It give the user the ability to search for command
-usage, for certain user.
+Predictix EC2 machines. It give the user the ability to search the history of command
+usage.
 
 \textbf{Nixops-dashboard}:
 SaaS solution that allows users with no technical knowledge, to easily provision
@@ -222,15 +220,20 @@ the need for:
 \item{Simpler language for business logic}
 \end{itemize}
 
-So all LB applications expose a set of sevices to the client (mostly the UI).
+So all LB applications expose a set of services to the client (mostly the UI).
 Each service is a feature in the application or a part of a feature. To test the
 performance we measure the time it took for a request to one of the services to
-complete, Thus measuring both the performance of the  application and the
+complete, Thus measuring both the performance of the application and the
 LogicBlox database.
 
-TODO
+The services request are predefined as Lamias tests. The tests can be Relax
+query or simple HTTP requests. The definition of the Lamias tests used in the
+benchmarks differ per application. Thus benchmarking is only relevant in the
+scope of one application. Thus, benchmarks of different application can't be
+used to compare the performance of the two. Also the tests used to measure the
+performance of one application can't be reused in the benchmark of another one.
 
 \section*{Conclusion}
 The first chapter provided an overview of the general context of the project and
-its scope. We introduced the host company and the technical infrastucture team
-along with project problematic.
+its scope. We introduced the host company and the technical DevOps along with
+project problematic.

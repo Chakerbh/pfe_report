@@ -3,7 +3,7 @@
 This chapter covers the implementation, testing and the deployment processes of
 the Benchmarks dashboard project. To deal wit each of these processes, we will
 introduce the technologies used and describe the way we used them. In
-addition, we will presente the project planning.
+addition, we will present the project planning.
 \pagebreak
 
 \section{Used technologies}
@@ -143,9 +143,9 @@ We will be using NixOps Dashboard API to provision servers and deploy the
 applications in the cloud in order to benchmark them in a production-like
 systems.
 
-\section{Developmnet environment}
-\subsection{Devlopment machine characteristics}
-Below are the characteristics of the developmnet machine we used during the
+\section{Development environment}
+\subsection{Development machine characteristics}
+Below are the characteristics of the development machine we used during the
 project implementation.
 
 \begin{itemize}
@@ -200,24 +200,21 @@ In the first sprint, our goal is to start by automating the benchmark of one of
 Predictix's applications, thus we can understand how to generalize for all other
 project and solve issue of consistency. The application we worked on is THD-AP.
 We started by installing the application locally understand how to build it,
-deploy it and how to benchmark it. After getting acquainted to the benchmark
-process. We used Nixops Dashboard to deploy the applicatoin on the cloud and
-automate the running of tests via systemd servies.
+This included how to compile the application, install it and run the tests.
+We also deploy it in the cloud and run the benchmark tests in cloud server.
+After getting acquainted to the benchmark process. We started by automating the
+benchmark process by adding systemd services to Install the application, Load
+the data and run the benchmarks
 
-\subsection{Sprint 2}
-In the second sprint, our goal is to model the web application that the users
-will use to both start benchmarks and visuilaze the benchmarks runs. We stated
-by looking the available frameworks for web development. Finally we developed
-the workflow that will run new benchmark.
 
 \subsection{Sprint 3}
 In the second sprint, our goal is to model the web application that the users
-will use to both start benchmarks and visuilaze the benchmarks runs. We stated
+will use to both start benchmarks and visualize the benchmarks runs. We stated
 by looking the available frameworks for web development. Finally we developed
 the workflow that will run new benchmark.
 
 After we get acquainted to the benchmark process, we started righting defining
-the steps in the benchmark pipeline. 
+the steps in the benchmark pipeline.
 \subsubsection{Deploying}
 To be tested in production-like environment, the
 application need to be deployed to the cloud. In order to compare between
@@ -263,9 +260,9 @@ the log of systemd service and how the service is invoked automatically.
 \label{fig:load-perf-data-log}
 \end{figure}
 
-\subsubsection{Running tests}
+\subsubsection{Running benchmark tests}
 For running tests we use a generic script called \emph{run-perf}. This script will
-define the instructions for running the tests, collect the logs, generate the
+define the instruction for running the tests, collect the logs, generate the
 report and upload it to S3. The figure
 \hyperref[fig:perf-runner-nix]{\ref{fig:perf-runner-nix}} shows the definition of
 the systemd service \emph{perf-runner} responsible for running the script, it
@@ -283,7 +280,56 @@ service.
 \label{fig:perf-runner-log}
 \end{figure}
 The figure \hyperref[fig:perf-runner-log]{\ref{fig:perf-runner-log}} shows a
-trucated log of perf-runner service.
+truncated log of perf-runner service.
+
+Finally after the test are completed and the report are generated they will be
+automatically published to our application using the HTTP protocol.
+
+\subsection{Sprint 2}
+In the second sprint, our goal is to model the web application that the users
+will use to both start benchmarks and visualize the benchmarks runs. We started
+by choosing web framework.
+The web ecosystem has been evolving with consistent rate over the last few
+years. Having in mind that the application need to be modular, maintainable and
+stable. Also from the fact that the company made a strategic decision to move to
+React JS, Thus most of the frontend developers in the company are familiar with
+React. We choose it to build the frontend of our application.
+
+\subsection{Sprint 2}
+In this sprint we mostly focused on the authentication and the authorization part
+of the application.
+\subsubsection{Authentication}
+To authenticate users we used Google+ API. Since all developers in Predictix
+have @predictix.com Google account they can used it to authenticate to the
+application check \hyperref[fig:perf-runner-log]{\ref{fig:perf-runner-log}}. If
+it's first login, a new user will be stored in the database. Then all future
+requests will be associated to that user using JWT token.
+
+\begin{figure}[h]
+  \centerline{\includegraphics[width=14cm]{google_auth}}
+\caption{Google authentication workflow}
+\label{fig:google_auth}
+\end{figure}
+
+\subsubsection{Authorization}
+Since the application is used to check the performance of Predictix application.
+Project owner choose to allow all application user the right to check all
+accounts benchmarks and history. However, for running new benchmarks the user
+must have the appropriate rights. Thus, we associated an account role to every
+user. So either the user have a create benchmark right, admin right or it have
+only read right. Check the entity relationship diagram
+\hyperref[fig:user_role]{\ref{fig:user_role}} that explain how this is
+done in the database
+\begin{figure}[h]
+  \centerline{\includegraphics[width=14cm]{user_role}}
+\caption{User Role entity}
+\label{fig:user_role}
+\end{figure}
+We use the entity in every user request to check if the user has the appropriate
+right, If not we use Pyramid exceptions to return the 403 HTTP response to the
+user.
+
+\subsubsection{Security}
 
 \section{Deployment}
 Hydra is a Nix-based continuous build system that constantly checks out code
@@ -317,7 +363,7 @@ the nix package manager.
 
 The figure \hyperref[fig:hydra_eval]{\ref{fig:hydra_eval}} represents the Hydra
 evaluation screen, where we can see the history if the build and whether there
-are erros in the build or not.
+are errors in the build or not.
 
 \begin{figure}[h]
 \includegraphics[width=17cm]{hydra_eval}
@@ -327,7 +373,7 @@ are erros in the build or not.
 
 In Hydra we can also run unit test and report various indicator about the
 quality of the application. The figure
-\hyperref[fig:coverage]{\ref{fig:coverage}} shows the covarge report of the test
+\hyperref[fig:coverage]{\ref{fig:coverage}} shows the coverage report of the test
 of our application.
 
 \begin{figure}[h]
