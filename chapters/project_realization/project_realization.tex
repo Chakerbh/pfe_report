@@ -24,7 +24,7 @@ library that covers areas such as string processing (regular expressions,
 Unicode, calculating differences between files), Internet protocols (HTTP, FTP,
 SMTP, XML-RPC, POP, IMAP, CGI programming), software engineering (unit testing,
 logging, profiling, parsing Python code), and operating system interfaces
-(system calls, filesystems, TCP/IP sockets). Look at the table of contents for
+(system calls, filesystem, TCP/IP sockets). Look at the table of contents for
 The Python Standard Library to get an idea of what’s available. A wide variety
 of third-party extensions are also available.
 TODO(Add link Python https://docs.python.org/2/faq/general.html)
@@ -46,7 +46,7 @@ JavaScript was a purely interpreted language. This means that scripts execute
 without preliminary compilation (without conversion of the script text into
 machine code). The user's browser interprets the script, that is, analyzes and
 immediately executes it. In modern implemented, The user's browser interprets
-the script, that is, analyzes and immediatley 
+the script, that is, analyzes and immediately 
 TODO(Add link Mozilla developer network, https://developer.mozilla.org/en-us/docs/web/javascript)
 
 \subsection{Frameworks}
@@ -64,15 +64,15 @@ page, using reusable UI components. Its main goal is to be fast, simple and
 scalable. It is currently one of the most popular JavaScript libraries and it
 has strong foundation and large community behind it. React components are
 typically written in JSX, a JavaScript extension syntax allowing quoting of HTML
-and using HTML tag syntax to render subcomponents.
+and using HTML tag syntax to render sub-components.
 
 \subsubsection{Grommet}
 Grommet is a UX framework for enterprise applications developed by HP, on top of
-ReactJS. It was created to align the desing and developer workflow into one
+ReactJS. It was created to align the design and developer workflow into one
 seamless experience. The Grommet components library is designed to be perfect
 complement to the design system. With little setup, developer will be able to
 create a Grommet application from scratch in minutes and take the pain out of
-translating desing files into unning application code.
+translating design files into running application code.
 
 \section{Tools and services}
 \subsection{AWS}
@@ -93,7 +93,7 @@ Nix is a purely functional package manager. This means that it treats packages
 like values in purely functional programming languages such as Haskell — they
 are built by functions that don’t have side-effects, and they never change after
 they have been built. Nix stores packages in the Nix store, usually the
-directory /nix/store, where each package has its own unique subdirectory such as
+directory /nix/store, where each package has its own unique sub-directory such as
 
 \colorbox{Gray}{\lstinline{nix/store/b6gvzjyb2pg0kjfwrjmg1vfhh54ad73z-firefox-33.1/}}
 
@@ -101,8 +101,8 @@ Where \colorbox{Gray}{\lstinline{b6gvzjyb2pg0...}} is a unique identifier for th
 dependencies (it’s a cryptographic hash of the package’s build dependency
 graph). This enables many powerful features.
 
-Nix was created by Eelco Dolstra as he's PHD. Eelco is, along with other main
-contributors to the Nix ecosystem, a Predictix employment.
+Nix was created by Eelco Dolstra as PhD project. Eelco is, along with other main
+contributors to the Nix ecosystem, employed as DevOps engineer at Predictix.
 \subsubsection{Nix language}
 The Nix expression language is a pure, lazy, functional language. Purity means
 that operations in the language don't have side-effects (for instance, there is
@@ -115,7 +115,7 @@ packages.
 
 \subsubsection{NixOS}
 Nixos is Linux distribution built on top of the Nix package manager. It
-uses the Nix language for declarative configuration which allows realiable
+uses the Nix language for declarative configuration which allows reliable
 system upgrades.
 Although NixOS started as a research project, it is a fully functional and
 usable operating system.
