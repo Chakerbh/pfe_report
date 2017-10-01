@@ -1,0 +1,4 @@
+This report summarizes the work carried out as part of a graduation project to obtain the national
+diploma of computer engineer in the company Infor Tunis. The work consists in designing
+and implementing a solution to automate and simplify the benchmarking of company's applications
+Keywords : Benchmarks, Automation, Nix, SaaS, Cloud

@@ -1,10 +1,3 @@
-\chapter*{General Intoduction}
-T
-
-In the era of cloud computing, organization need to leverage the power the cloud
-to disrupting business models, by transforming calculation and data to the off
-premise. Doing this will help them to speed up the evolution of the company and
-innovate more quickly by cheaper rates
 \chapter{Project realization}
 \section*{Introduction}
 This chapter covers the implementation, testing and the deployment processes of
@@ -73,9 +66,9 @@ typically written in JSX, a JavaScript extension syntax allowing quoting of HTML
 and using HTML tag syntax to render sub-components.
 
 \subsubsection{Grommet}
-Grommet is a UX framework for enterprise applications developed by HP, on top of
+Grommet \cite{grommet} is a UX framework for enterprise applications developed by HP, on top of
 ReactJS. It was created to align the design and developer workflow into one
-seamless experience. The Grommet components library is designed to be perfect
+seamless experience. The Grommet components \cite{grommet_comp} library is designed to be perfect
 complement to the design system. With little setup, developer will be able to
 create a Grommet application from scratch in minutes and take the pain out of
 translating design files into running application code.
@@ -95,7 +88,7 @@ server farm.
 
 \subsubsection{Nix}
 
-Nix is a purely functional package manager. This means that it treats packages
+Nix \cite{nix_elphd} is a purely functional package manager. This means that it treats packages
 like values in purely functional programming languages such as Haskell — they
 are built by functions that don’t have side-effects, and they never change after
 they have been built. Nix stores packages in the Nix store, usually the
@@ -127,7 +120,7 @@ Although NixOS started as a research project, it is a fully functional and
 usable operating system.
 
 \paragraph{NixOps}
-NixOps is a tool for deploying sets of NixOS Linux Machines, either to real
+NixOps \cite{nixops}is a tool for deploying sets of NixOS Linux Machines, either to real
 hardware or to virtual machines. It extends NixOS's declarative approach to
 system configuration to networks and adds provisioning.
 
@@ -230,9 +223,10 @@ consistent across all the runs The user mustn't have any interaction with the
 provisioning of the server nor the deployment of the application. 
 
 $\bullet$ \textbf{Provisioning}: Since Predictix application are
-memory-intensive, we chose to deploy them in a r3.4xlarge EC2 instances from
-Amazon AWS. This type of instances offer lower price of GiB of RAM. r3.4xlarge
-has 122 GB of RAM with 16 cores CPU and 320 GB of SSD Storage.
+memory-intensive, we chose to deploy them in a r3.4xlarge EC2 instances
+\cite{ec2_instances} from Amazon AWS. This type of instances offer lower price
+of GiB of RAM. r3.4xlarge has 122 GB of RAM with 16 cores CPU and 320 GB of SSD
+Storage.
 
 $\bullet$ \textbf{Installing}:After provisioning the server. We need to deploy
 the application to that server. The closure of the application will be already
@@ -258,7 +252,7 @@ soon as the application in installed. It will be expected to be at the script
 directory within the application root directory. The figure
 \hyperref[fig:load-perf-data]{\ref{fig:load-perf-data}} shows the definition of
 the systemd service \emph{load-perf-data.sh}. And the figure
-\hyperref[fig:load-perf-data-running]{\ref{fig:load-perf-data-running}} Shows
+\hyperref[fig:load-perf-data-log]{\ref{fig:load-perf-data-log}} Shows
 the log of systemd service and how the service is invoked automatically.
 \begin{figure}[h]
   \includegraphics[width=14cm]{load-perf-data}
@@ -388,7 +382,7 @@ Application performance is confidential internal information that shouldn't be
 shared out of the company . Thus the application that serve the result should
 only be accessible to company employees only. For that we used EC2 security
 groups.
-EC2 security group are network rules that can be set on Amazon cloud instances.
+EC2 security group \cite{ec2_sg} are network rules that can be set on Amazon cloud instances.
 So the application will only be accessibly from certain IPs. We only allowed
 access to people who are connected to the company internal VPN.
 
@@ -477,6 +471,40 @@ of our application.
 
 \clearpage
 \section*{Conclusion}
-TODO
+For developing the Benchmarks Dashboard, we opted for the scrum methodology
+based on incremental development. This section was devoted to the definition of
+the sprints we fixed as well as the hardware and software technologies that we
+used. We, also, presented the results of the execution of the application
+through its interfaces, and our application's deployment process, while giving
+the performance evaluation.
 
 \chapter*{General conclusion}
+
+Big data and Cloud computing is the latest buzzwords in information technology.
+Having tremendous amounts of complex data that need to be proceed on near
+real-time performance, can be tricky. So having a clear performance audit is
+critical to monitor the performance of the application. Also providing the way
+to the developer to start new benchmark in a click of a button is a major
+productivity boost.
+
+In the present report, we began by presenting the general context of our
+project while introducing some important concepts, such as deploying,
+Benchamrks, workflows and Nix that is used across all of Predictix projects’ and that
+we used, as a consequence. We also stated our project’s problematic and an
+overview over its goals. Then, we defined our project’s requirements and we
+specified them, following the scrum methodology. Afterwards, we proceeded with
+the project design through mockups, while defining our project’s static and
+behavioural aspect. Finally, we described in the last chapter the
+implementation, performance evaluation and deployment processes and presented an
+overview of the achieved work.
+
+My internship at Predictix was, undoubtedly, one of the most important and
+enriching experiences in my life. This experience was rewarding for me in
+terms of academic achievements and professional experience. Indeed, my
+internship assignment allowed me to put my academic knowledge into practice
+and to gain experience in software development. This was accomplished through
+successfully completing development tasks. But added to these technical
+competencies, I have also acquired soft skills through the daily experience of
+working within the team of developers at Predictix as we had the opportunity to
+work in an encouraging, collaborating and teamwork driven environment of
+highly skilled engineers.
