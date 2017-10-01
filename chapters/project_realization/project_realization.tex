@@ -1,5 +1,12 @@
+\chapter*{General Intoduction}
+T
+
+In the era of cloud computing, organization need to leverage the power the cloud
+to disrupting business models, by transforming calculation and data to the off
+premise. Doing this will help them to speed up the evolution of the company and
+innovate more quickly by cheaper rates
 \chapter{Project realization}
-\section{Introduction}
+\section*{Introduction}
 This chapter covers the implementation, testing and the deployment processes of
 the Benchmarks dashboard project. To deal wit each of these processes, we will
 introduce the technologies used and describe the way we used them. In
@@ -73,8 +80,8 @@ complement to the design system. With little setup, developer will be able to
 create a Grommet application from scratch in minutes and take the pain out of
 translating design files into running application code.
 
-\section{Tools and services}
-\subsection{AWS}
+\subsection{Tools and services}
+\subsubsection{AWS}
 Amazon Web Services (AWS) is a subsidiary of Amazon.com that provides on-demand
 cloud computing platforms. These services operate from many global geographical
 regions including 6 in North America. They include Amazon Elastic Compute
@@ -86,7 +93,7 @@ Internet of Things. Amazon markets AWS as a service to provide large computing
 capacity quicker and cheaper than a client company building an actual physical
 server farm.
 
-\subsection{Nix}
+\subsubsection{Nix}
 
 Nix is a purely functional package manager. This means that it treats packages
 like values in purely functional programming languages such as Haskell — they
@@ -102,7 +109,7 @@ graph). This enables many powerful features.
 
 Nix was created by Eelco Dolstra as PhD project. Eelco is, along with other main
 contributors to the Nix ecosystem, employed as DevOps engineer at Predictix.
-\subsubsection{Nix language}
+\paragraph{Nix language}
 The Nix expression language is a pure, lazy, functional language. Purity means
 that operations in the language don't have side-effects (for instance, there is
 no variable assignment). Laziness means that arguments to functions are
@@ -112,14 +119,14 @@ The language is not a full-featured, general purpose language. Its main job is
 to describe packages, compositions of packages, and the variability within
 packages.
 
-\subsubsection{NixOS}
+\paragraph{NixOS}
 Nixos is Linux distribution built on top of the Nix package manager. It
 uses the Nix language for declarative configuration which allows reliable
 system upgrades.
 Although NixOS started as a research project, it is a fully functional and
 usable operating system.
 
-\subsubsection{NixOps}
+\paragraph{NixOps}
 NixOps is a tool for deploying sets of NixOS Linux Machines, either to real
 hardware or to virtual machines. It extends NixOS's declarative approach to
 system configuration to networks and adds provisioning.
@@ -471,3 +478,5 @@ of our application.
 \clearpage
 \section*{Conclusion}
 TODO
+
+\chapter*{General conclusion}
