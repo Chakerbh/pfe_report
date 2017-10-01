@@ -9,30 +9,22 @@ will specify the different proposed solutions and choose the one that fits most
 our needs.
 \pagebreak
 
-\section{General concepts}
-
-In this section, we will be defining the general concepts that the DevOps team
-work around, and more specifically those that this project evolves around. We
-will also clarify the use cases for these technologies and concepts in
-Predictix.
-
-\section{Declarative programming}
+\section{Datalog}
 In computer science, declarative programming is a programming paradigm—a style
 of building the structure and elements of computer programs—that expresses the
-logic of a computation without describing its control flow.[1]
+logic of a computation without describing its control flow.
 
 Many languages that apply this style attempt to minimize or eliminate side
 effects by describing what the program must accomplish in terms of the problem
 domain, rather than describe how to accomplish it as a sequence of the
-programming language primitives[2] (the how being left up to the language's
+programming language primitives (the how being left up to the language's
 implementation). This is in contrast with imperative programming, which
 implements algorithms in explicit steps.
 
 Declarative programming often considers programs as theories of a formal logic,
 and computations as deductions in that logic space. Declarative programming may
-greatly simplify writing parallel programs.[3]
+greatly simplify writing parallel programs.
 
-\subsection{Datalog}
 Datalog is a declarative logic programming language that syntactically is a
 subset of Prolog. It is often used as a query language for deductive databases.
 In recent years, Datalog has found new application in data integration,
@@ -41,7 +33,7 @@ computing.
 
 Its origins date back to the beginning of logic programming, but it became
 prominent as a separate area around 1977 when Hervé Gallaire and Jack Minker
-organized a workshop on logic and databases.[2] David Maier is credited with
+organized a workshop on logic and databases. David Maier is credited with
 coining the term Datalog.
 
 The applications that we will measure the performance of, are all written in
@@ -51,7 +43,7 @@ commercial implementation of Datalog, LogiQL.
 Rest stands for Representational State Transfer. It is an architecture style for
 designing networked applications. It permits creating, modifying resources
 easily. Indeed REST is a lightweight alternative to complex mechanism like RPC,
-CORBA and SOAP. 
+CORBA and SOAP.
 
 Rest is not a 'standard'. In fact,  it is a guideline to build an efficient
 framework for communication between two machines using HTTP protocol. The World
@@ -99,9 +91,6 @@ far from the user–ranging in distance from across a city to across the world.
 Cloud computing relies on sharing of resources to achieve coherence and economy
 of scale, similar to a utility (like the electricity grid) over an electricity
 network.
-
-\section{Retail}
-TODO
 
 \section{SaaS}
 Software as a service (SaaS) is a software licensing and
@@ -156,27 +145,6 @@ across different chip/system architectures.
 In our case the we are going to benchmark applications along with the database
 system that powers them. Since they are strongly coupled.
 
-\section{NoSQL}
-A NoSQL (originally referring to "non SQL", "non relational" or "not only
-SQL") database provides a mechanism for storage and retrieval of data which
-is modeled in means other than the tabular relations used in relational
-databases. Such databases have existed since the late 1960s, but did not obtain
-the "NoSQL" moniker until a surge of popularity in the early twenty-first
-century, triggered by the needs of Web 2.0 companies such as Facebook,
-Google, and Amazon.com. NoSQL databases are increasingly used in big
-data and real-time web applications.[6] NoSQL systems are also sometimes called
-"Not only SQL" to emphasize that they may support SQL-like query
-languages.
-
-Motivations for this approach include: simplicity of design, simpler
-"horizontal" scaling to clusters of machines (which is a problem for relational
-databases), and finer control over availability. The data structures used by
-NoSQL databases (e.g. key-value, wide column, graph, or document) are different
-from those used by default in relational databases, making some operations
-faster in NoSQL. The particular suitability of a given NoSQL database depends on
-the problem it must solve. Sometimes the data structures used by NoSQL databases
-are also viewed as "more flexible" than relational database tables
-
 \section{SOA}
 Service-Oriented Architecture(SOA) is primarily regarded as a technical
 architecture consisting of tools and service specification to build loosely
@@ -192,8 +160,7 @@ SOAP messaging standard. Services are described in a service description
 standard called WSDL. Since SOAP allows multiple message exchange patterns such
 as request-and-response, broadcasting and sophisticated message correlations, it
 can be used to integrate almost all kinds of legacy system from different
-vendors.
-TODO(http://aisel.aisnet.org/cgi/viewcontent.cgi?article=3331&context=cais)
+vendors.\cite{soa}
 
 Basic technologies such as (XML, SOAP, WSDL) provide means to describe, locate,
 and invoke services in SOA as an entity in its own right. However, these technologies
@@ -271,7 +238,7 @@ members of the team as to whether or not the development is satisfactory;
 however, there will be no more work on that particular phase of the project. The
 remaining phases of the project will continue to develop within their respective
 time frames.
-\subsection{Scrum}
+
 Scrum is just one of the many iterative and incremental agile software
 development method. In the SCRUM methodology a sprint is the basic unit of
 development. Each sprint starts with a planning meeting, where the tasks for the
@@ -281,4 +248,5 @@ reviewed and lessons for the next sprint are identified. During each sprint, the
 team creates finished portions of a product.
 
 \section*{Conclusion}
+In This chapter we introduced general concepts
 TODO

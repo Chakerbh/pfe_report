@@ -1,5 +1,12 @@
+\chapter*{General Intoduction}
+T
+
+In the era of cloud computing, organization need to leverage the power the cloud
+to disrupting business models, by transforming calculation and data to the off
+premise. Doing this will help them to speed up the evolution of the company and
+innovate more quickly by cheaper rates
 \chapter{Project realization}
-\section{Introduction}
+\section*{Introduction}
 This chapter covers the implementation, testing and the deployment processes of
 the Benchmarks dashboard project. To deal wit each of these processes, we will
 introduce the technologies used and describe the way we used them. In
@@ -25,9 +32,9 @@ Unicode, calculating differences between files), Internet protocols (HTTP, FTP,
 SMTP, XML-RPC, POP, IMAP, CGI programming), software engineering (unit testing,
 logging, profiling, parsing Python code), and operating system interfaces
 (system calls, filesystem, TCP/IP sockets). Look at the table of contents for
-The Python Standard Library to get an idea of what’s available. A wide variety
-of third-party extensions are also available.
-TODO(Add link Python https://docs.python.org/2/faq/general.html)
+The Python Standard Library to get an idea of what's available. A wide variety
+of third-party extensions are also available.\cite{python}
+
 
 \subsubsection{Javascript}
 JavaScript (shortened to JS) is an interpreted, object-oriented, weakly typed,
@@ -46,15 +53,14 @@ JavaScript was a purely interpreted language. This means that scripts execute
 without preliminary compilation (without conversion of the script text into
 machine code). The user's browser interprets the script, that is, analyzes and
 immediately executes it. In modern implemented, The user's browser interprets
-the script, that is, analyzes and immediately 
-TODO(Add link Mozilla developer network, https://developer.mozilla.org/en-us/docs/web/javascript)
+the script, that is, analyzes and immediately. \cite{javascript}
 
 \subsection{Frameworks}
 \subsubsection{Pyramid}
 Pyramid is a fast and low-level Python web framework. It is developed as
 part of the Pylons Projects. Even Pyramid isn't famous like Flask and Django, it
 minimal, unobtrusive and agnostic design helps in developing more robust and
-fast web applications. TODO(Complete) 
+fast web applications.
 
 \subsubsection{ReactJS}
 React is an open-source front end library developed by Facebook. It's used for
@@ -74,8 +80,8 @@ complement to the design system. With little setup, developer will be able to
 create a Grommet application from scratch in minutes and take the pain out of
 translating design files into running application code.
 
-\section{Tools and services}
-\subsection{AWS}
+\subsection{Tools and services}
+\subsubsection{AWS}
 Amazon Web Services (AWS) is a subsidiary of Amazon.com that provides on-demand
 cloud computing platforms. These services operate from many global geographical
 regions including 6 in North America. They include Amazon Elastic Compute
@@ -87,7 +93,7 @@ Internet of Things. Amazon markets AWS as a service to provide large computing
 capacity quicker and cheaper than a client company building an actual physical
 server farm.
 
-\subsection{Nix}
+\subsubsection{Nix}
 
 Nix is a purely functional package manager. This means that it treats packages
 like values in purely functional programming languages such as Haskell — they
@@ -103,7 +109,7 @@ graph). This enables many powerful features.
 
 Nix was created by Eelco Dolstra as PhD project. Eelco is, along with other main
 contributors to the Nix ecosystem, employed as DevOps engineer at Predictix.
-\subsubsection{Nix language}
+\paragraph{Nix language}
 The Nix expression language is a pure, lazy, functional language. Purity means
 that operations in the language don't have side-effects (for instance, there is
 no variable assignment). Laziness means that arguments to functions are
@@ -113,14 +119,14 @@ The language is not a full-featured, general purpose language. Its main job is
 to describe packages, compositions of packages, and the variability within
 packages.
 
-\subsubsection{NixOS}
+\paragraph{NixOS}
 Nixos is Linux distribution built on top of the Nix package manager. It
 uses the Nix language for declarative configuration which allows reliable
 system upgrades.
 Although NixOS started as a research project, it is a fully functional and
 usable operating system.
 
-\subsubsection{NixOps}
+\paragraph{NixOps}
 NixOps is a tool for deploying sets of NixOS Linux Machines, either to real
 hardware or to virtual machines. It extends NixOS's declarative approach to
 system configuration to networks and adds provisioning.
@@ -144,7 +150,6 @@ applications in the cloud in order to benchmark them in a production-like
 systems.
 
 \section{Development environment}
-\subsection{Development machine characteristics}
 Below are the characteristics of the development machine we used during the
 project implementation.
 
@@ -161,13 +166,15 @@ Benchmarks Dashboard application. At first, we will start by introducing the
 project team and then we will describe the tracking process of the different
 implementation tasks.
 \subsection{Project team}
-The table TODO introduces the project team members and their roles.
+The table \hyperref[project_members]{\ref{project_member}} introduces the project team members and their roles.
 
-\begin{center}
+\begin{table}[]
+\centering
+\label{project_members}
   \begin{tabular}{ | p{3cm}  | p{6cm} |}
     \hline
 
-    Scrum role    & Person          \\ \hline
+    Scrum role    & Name          \\ \hline
 
     Product owner & Oussama Elkaceh \\ \hline
     Scrum Master  & Wassel Msehli   \\ \hline
@@ -175,7 +182,8 @@ The table TODO introduces the project team members and their roles.
 
     \hline
   \end{tabular}
-\end{center}
+\caption{Project members and their role}
+\end{table}
 
 \subsection{Jira}
 Predictix development teams use Jira for managing the projects. Jira is a
@@ -187,8 +195,7 @@ keeps the team on track and allows the project manager to monitor the progress
 on projects. Besides, it improves quality be ensuring that all tasks are
 recorded down with all details and followed up until accomplishment. Moreover,
 Jira is an extensible platform which means that it offers workflow customization
-to match more the business process. TODO(Add link Atlassian, jira software
-provider, www.atlassian.com.)
+to match more the business process. \cite{jira}
 
 
 \section{Implementation}
@@ -235,7 +242,12 @@ will start the database, the web-server, install workspaces and it will make
 sure that the application is up and running.
 
 For starting the deployment we use NixOps Dashboard, it will take
-some arguments like the type of the instance TODO.
+some arguments like the type of the instance, AWS account to use to deploy
+the application, The application configuration (Users, Whether to run workflows
+or not...) and application closure (package). And start deploying the
+application with those configurations. After NixOps finish creating the instance
+in EC2 cloud. It will install the packages using predefined instructions to
+install LB applications.
 
 \subsubsection{Load data}
 Loading data is project specific, each application need to provide the steps to
@@ -285,7 +297,7 @@ truncated log of perf-runner service.
 Finally after the test are completed and the report are generated they will be
 automatically published to our application using the HTTP protocol.
 
-\subsection{Sprint 2}
+\subsection{Sprint 3}
 In the second sprint, our goal is to model the web application that the users
 will use to both start benchmarks and visualize the benchmarks runs. We started
 by choosing web framework.
@@ -295,19 +307,61 @@ stable. Also from the fact that the company made a strategic decision to move to
 React JS, Thus most of the frontend developers in the company are familiar with
 React. We choose it to build the frontend of our application.
 
-\subsection{Sprint 2}
+React helps in defining the application frontend in a declarative approach.
+Component in react are like class functions in a pure functional language. The
+whole and single purpose of a react component is to render an object using the
+passed state. Most of the component that we wrote are stateless in the meaning
+that they don't depend of the application state to render. All the data that the
+component need to successfully render are passed to it in the instantiation
+time. This type of component are called presentational component.
+
+We also used the Redux library that help to organize the overall state of the
+application. The later is  saved in a one big data object that called Store,
+Redux then work using an action-dispatch paradigm. Component aren't responsible
+of getting the data from the backend and changing the store content. If a data
+need to be fetched, let's say user click on a button, then they only need to
+dispatch action. When an action finish the store will be updated and redux/react
+will only update the component that need to be updated. The
+figure \hyperref[fig:react_redux]{\ref{fig:react_redux}} present the
+difference between a react application that use redux and another one that
+don't. Figure \hyperref[fig:react_workflow]{\ref{fig:react_workflow}} shows the
+workflow of action dispatching in a react application.
+
+\begin{figure}[h]
+  \centerline{\includegraphics[width=14cm]{react_redux}}
+\caption{React application with and without Redux}
+\label{fig:react_redux}
+\end{figure}
+
+\begin{figure}[h]
+  \centerline{\includegraphics[width=14cm]{react_workflow}}
+\caption{ Workflow of react application }
+\label{fig:react_workflow}
+\end{figure}
+
+\clearpage
+\subsection{Sprint 4}
 In this sprint we mostly focused on the authentication and the authorization part
 of the application.
 \subsubsection{Authentication}
 To authenticate users we used Google+ API. Since all developers in Predictix
-have @predictix.com Google account they can used it to authenticate to the
+have @predictix.com Google account they can use it to authenticate to the
 application check \hyperref[fig:perf-runner-log]{\ref{fig:perf-runner-log}}. If
 it's first login, a new user will be stored in the database. Then all future
-requests will be associated to that user using JWT token.
+requests will be associated to that user using JWT token. The figure
+\hyperref[fig:perf-runner-log]{\ref{fig:perf-runner-log}} shows the list of the
+account that the user should select from after he click Login with Google
+button.
 
 \begin{figure}[h]
   \centerline{\includegraphics[width=14cm]{google_auth}}
 \caption{Google authentication workflow}
+\label{fig:google_auth}
+\end{figure}
+
+\begin{figure}[h]
+  \centerline{\includegraphics[width=8cm]{chose_google_account}}
+\caption{user's Google accounts}
 \label{fig:google_auth}
 \end{figure}
 
@@ -321,7 +375,7 @@ only read right. Check the entity relationship diagram
 \hyperref[fig:user_role]{\ref{fig:user_role}} that explain how this is
 done in the database
 \begin{figure}[h]
-  \centerline{\includegraphics[width=14cm]{user_role}}
+  \centerline{\includegraphics[width=9cm]{user_role}}
 \caption{User Role entity}
 \label{fig:user_role}
 \end{figure}
@@ -330,8 +384,47 @@ right, If not we use Pyramid exceptions to return the 403 HTTP response to the
 user.
 
 \subsubsection{Security}
+Application performance is confidential internal information that shouldn't be
+shared out of the company . Thus the application that serve the result should
+only be accessible to company employees only. For that we used EC2 security
+groups.
+EC2 security group are network rules that can be set on Amazon cloud instances.
+So the application will only be accessibly from certain IPs. We only allowed
+access to people who are connected to the company internal VPN.
 
-\section{Deployment}
+On top of that we setup an HTTPS certificate and we redirect all non-secured
+request to use the HTTPS protocol on port 443. The
+figure\hyperref[fig:https]{\ref{fig:https}} show How Google Chrome is
+confirming that the site is using a valid HTTPS certificate.
+\begin{figure}[h]
+  \centerline{\includegraphics[width=9cm]{https}}
+\caption{The HTTPS certificate view in Chrome}
+\label{fig:https}
+\end{figure}
+
+\section{Final overview}
+In this section we will list the final state of the development of the
+application. Figure \hyperref[fig:entity_relation]{\ref{fig:entity_relation}} present the
+entity-relationship diagram we established by the end of sprint 4. The diagram
+show the different entities of the application. Figure
+\hyperref[fig:api_doc]{\ref{fig:api_doc}} on the other hand
+shows the endpoints of the application API and the documentation of each one,
+this include the parameters, URL, payload and the expected result.
+
+\begin{figure}[h]
+  \centerline{\includegraphics[width=9cm]{entity_relation}}
+\caption{Entity relationship diagram}
+\label{fig:entity_relation}
+\end{figure}
+
+\begin{figure}[h]
+  \centerline{\includegraphics[width=9cm]{api_doc}}
+\caption{API documentation}
+\label{fig:api_doc}
+\end{figure}
+
+
+\section{Validation tests and Deployment}
 Hydra is a Nix-based continuous build system that constantly checks out code
 sources of software projects from version management systems such as Mercurial,
 to build, test and release them. The build tasks are described using Nix
@@ -342,7 +435,7 @@ In fact, the code of our application is, currently and constantly pushed in a
 repository in BitBucket, which is a web-based hosting service for projects that
 use either the Mercurial or Git revision control systems, such as GitHub. In
 order to have our application ready to be deployed, we added a file called
-default.nix to our project, that actually defines our project’s nix-expressions.
+default.nix to our project, that actually defines the project's nix-expressions.
 Afterwards, we created a project under Hydra, that we called \emph{Benchmarks
   Dashboard}. Thus, the \emph{Benchmarks Dashboard} project on Hydra, will be
 pulling our code from our BitBucket repository along with the default.nix file
@@ -367,7 +460,7 @@ are errors in the build or not.
 
 \begin{figure}[h]
 \includegraphics[width=17cm]{hydra_eval}
-\caption{Benchmarks Dashboard Hydra configuration screen}
+\caption{Benchmarks Dashboard Hydra evaluations}
 \label{fig:hydra_eval}
 \end{figure}
 
@@ -385,3 +478,5 @@ of our application.
 \clearpage
 \section*{Conclusion}
 TODO
+
+\chapter*{General conclusion}
